@@ -40,6 +40,7 @@
             android:value="${YANDEX_CLIENT_ID}" />
 
         <meta-data
+            tools:replace="android:value"
             android:name="com.yandex.auth.OAUTH_HOST"
             android:value="${YANDEX_OAUTH_HOST}" />
     </application>
