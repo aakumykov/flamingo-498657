@@ -34,6 +34,7 @@ android {
             manifestPlaceholders += [
                     YANDEX_CLIENT_ID: "8719af4a012f4786a7a910582e741c8e",
                     YANDEX_OAUTH_HOST: "oauth.yandex.ru",
+                    IS_TESTING_FLAG: "false",
             ]
         }
         prod {
@@ -42,6 +43,7 @@ android {
             manifestPlaceholders += [
                     YANDEX_CLIENT_ID: "57a8133c69d947388a67164dfdbc46d3",
                     YANDEX_OAUTH_HOST: "oauth.yandex.ru",
+                    IS_TESTING_FLAG: "false",
             ]
         }
         stage {
@@ -49,7 +51,8 @@ android {
             // Don't use this client id in you app. Registration of new application: https://tech.yandex.ru
             manifestPlaceholders = [
                     YANDEX_CLIENT_ID : "e59824a58e2f440aa358f2b3eb13e364",
-                    YANDEX_OAUTH_HOST: "oauth-test.yandex.ru"
+                    YANDEX_OAUTH_HOST: "oauth-test.yandex.ru",
+                    IS_TESTING_FLAG: "false",
             ]
         }
     }

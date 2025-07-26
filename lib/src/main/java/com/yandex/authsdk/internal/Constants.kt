@@ -16,6 +16,8 @@ internal object Constants {
 
     internal const val HOST_PRODUCTION = "oauth.yandex.ru"
 
+    internal const val IS_TESTING_FLAG = "true"
+
     // Used in Yandex Account Manager
     internal const val EXTRA_CLIENT_ID = "com.yandex.auth.CLIENT_ID"
 
