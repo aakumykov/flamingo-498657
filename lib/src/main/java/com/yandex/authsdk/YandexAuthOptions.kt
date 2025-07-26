@@ -13,7 +13,6 @@ class YandexAuthOptions : Parcelable {
     val clientId: String
     val isLoggingEnabled: Boolean
     val oauthHost: String
-    val isTestingFlag: String
 
     @JvmOverloads
     constructor(context: Context, loggingEnabled: Boolean = false) {
@@ -32,24 +31,21 @@ class YandexAuthOptions : Parcelable {
         this.clientId = clientId
         isLoggingEnabled = loggingEnabled
         oauthHost = app.metaData.getString(Constants.META_OAUTH_HOST)!!
-        isTestingFlag = app.metaData.getString(Constants.IS_TESTING_FLAG)!!
     }
 
     val isTesting: Boolean
-        get() = !TextUtils.equals(isTestingFlag, Constants.IS_TESTING_FLAG)
+        get() = !TextUtils.equals(oauthHost, Constants.HOST_PRODUCTION)
 
     protected constructor(`in`: Parcel) {
         clientId = `in`.readString()!!
         isLoggingEnabled = `in`.readByte().toInt() != 0
         oauthHost = `in`.readString()!!
-        isTestingFlag = `in`.readString()!!
     }
 
     override fun writeToParcel(dest: Parcel, flags: Int) {
         dest.writeString(clientId)
         dest.writeByte((if (isLoggingEnabled) 1 else 0).toByte())
         dest.writeString(oauthHost)
-        dest.writeString(isTestingFlag)
     }
 
     override fun describeContents(): Int {
